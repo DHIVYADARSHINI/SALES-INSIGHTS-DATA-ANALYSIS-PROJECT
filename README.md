@@ -1,8 +1,5 @@
-
-Instructions to setup mysql on your local computer
-Follow step in this video to install mysql on your local computer https://www.youtube.com/watch?v=WuBcTJnIuzo
-
-SQL database dump is in db_dump.sql file above. Download db_dump.sql file to your local computer and import it as per instructions given in the tutorial video
+Download MySql.
+SQL database dump is in db_dump.sql file above. Download db_dump.sql file to your local computer and import it.
 
 Data Analysis Using SQL
 Show all customer records
@@ -42,6 +39,15 @@ Show total revenue in year 2020 in Chennai
 SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.market_code="Mark001";
 
 Data Analysis Using Power BI
+By using get data, import data from mysql.
+Then by clicking transform data, we can modify the data as per user need.
+Also we can create data modelling for those five tables.
+In the table view tab, we can view the respective table.
+Then in Base measures we can calculate total revenue and sales insights by using sum formula.
+By sing default charts we can view that as in required visualization format in dashboard.
+Also we can do a few visualizations by using different methods.
+
 Formula to create norm_amount column
 = Table.AddColumn(#"Filtered Rows", "norm_amount", each if [currency] = "USD" or [currency] ="USD#(cr)" then [sales_amount]*75 else [sales_amount], type any)
+
 
